@@ -5,6 +5,7 @@ import { Button, Text } from "galio-framework";
 import colors from "../config/colors";
 
 function WelcomeScreen({ navigation }) {
+  console.log("welcome");
   return (
     <ImageBackground
       blurRadius={10}
@@ -22,7 +23,7 @@ function WelcomeScreen({ navigation }) {
           shadowless
           color={colors.primary}
           style={styles.button}
-          onPress={() => console.log("Login")}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text style={styles.buttonText}>Login</Text>
         </Button>
@@ -32,7 +33,7 @@ function WelcomeScreen({ navigation }) {
           color={colors.secondary}
           shadowless
           style={styles.button}
-          onPress={() => console.log("Register")}
+          onPress={() => navigation.navigate("Register")}
         >
           <Text style={styles.buttonText}>Register</Text>
         </Button>

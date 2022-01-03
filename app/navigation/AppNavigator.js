@@ -1,17 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import ListingEditScreen from "../screens/ListingEditScreen";
 import FeedNavigator from "./FeedNavigator";
 import AccountNavigator from "./AccountNavigator";
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
-import useNotifications from "../hooks/useNotifications";
+// import useNotifications from "../hooks/useNotifications";
 //import * as Notifications from "expo-notifications";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
+  console.log("APP NAVIGATOR");
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -26,14 +26,16 @@ const AppNavigator = () => {
         }}
       />
       <Tab.Screen
-        component={ListingEditScreen}
+        component={AccountNavigator}
         name={routes.LISTING_EDIT}
         options={({ navigation }) => ({
           title: "Add",
           headerShown: false,
           tabBarButton: () => (
             <NewListingButton
-              onPress={() => navigation.navigate(routes.LISTING_EDIT)}
+              onPress={() =>
+                console.log("you can add navigation.navigate('route') here")
+              }
             />
           ),
         })}
