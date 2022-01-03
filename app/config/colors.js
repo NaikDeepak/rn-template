@@ -1,7 +1,9 @@
 export default {
-  primary: "#fc5c65",
-  secondary: "#4ecdc4",
-  tertiary: "#FFC86C",
+  primary: "#F0829Aff",
+  secondary: "#99CADBff",
+  tertiary: "#478E7Fff",
+  quaternary: "#5AB4E4ff",
+  quinary: "#BDDDF1ff",
   black: "#000",
   white: "#fff",
   medium: "#6e6969",
@@ -9,3 +11,9 @@ export default {
   dark: "#0c0c0c",
   danger: "#ff5252",
 };
+
+// --pink-sherbet: #F0829Aff;
+// --light-blue: #99CADBff;
+// --wintergreen-dream: #478E7Fff;
+// --cyan-process: #5AB4E4ff;
+// --columbia-blue: #BDDDF1ff;

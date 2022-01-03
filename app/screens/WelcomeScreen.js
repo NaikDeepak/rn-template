@@ -3,18 +3,18 @@ import { ImageBackground, StyleSheet, View, Image } from "react-native";
 
 import { Button, Text } from "galio-framework";
 import colors from "../config/colors";
+import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 function WelcomeScreen({ navigation }) {
   console.log("welcome");
   return (
     <ImageBackground
-      blurRadius={10}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
-        <Text style={styles.tagline}>Just another Tagline</Text>
+        <Image style={styles.logo} source={require("../assets/birdie.png")} />
+        <Text style={styles.tagline}>Communicate with Passion</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <Button
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 200,
+    height: 200,
   },
   logoContainer: {
     position: "absolute",
@@ -75,9 +75,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   tagline: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: "600",
     paddingVertical: 20,
+    color: colors.white,
   },
 });
 

@@ -28,8 +28,8 @@ export default {
     textTransform: "uppercase",
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 150,
     alignSelf: "center",
     marginTop: 50,
     marginBottom: 20,

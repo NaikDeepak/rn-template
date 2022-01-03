@@ -9,7 +9,7 @@ import {
   SubmitButton,
   ErrorMessage,
 } from "../components/forms";
-// import ActivityIndicator from "../components/ActivityIndicator";
+import ActivityIndicator from "../components/ActivityIndicator";
 import authApi from "../api/auth";
 // import useAuth from "../auth/useAuth";
 // import useApi from "../hooks/useApi";
@@ -47,10 +47,7 @@ function RegisterScreen() {
       <ActivityIndicator visible={loading} />
 
       <Screen style={styles.container}>
-        <Image
-          style={appStyle.logo}
-          source={require("../assets/logo-red.png")}
-        />
+        <Image style={appStyle.logo} source={require("../assets/birdie.png")} />
         <ErrorMessage error={errorMessage} visible={!!errorMessage} />
         <View style={styles.formContainer}>
           <Form
