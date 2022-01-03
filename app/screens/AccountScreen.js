@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 
 import { ListItem, ListItemSeparator } from "../components/lists";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import Screen from "../components/Screen";
+import { getAuth, signOut } from "firebase/auth";
+import AuthContext from "../auth/context";
 const menuItems = [
   {
     title: "My Listings",
@@ -25,8 +27,20 @@ const menuItems = [
 ];
 
 function AccountScreen({ navigation }) {
+  const { user, setUser } = useContext(AuthContext);
+  console.log("user", user);
+
   const handleLogout = () => {
-    console.log("handleLogout");
+    console.log("handleLogout", user);
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        console.log("logged out");
+        setUser(null);
+      })
+      .catch((error) => {
+        console.log("unable to logout", error);
+      });
   };
 
   return (

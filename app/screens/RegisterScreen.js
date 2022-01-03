@@ -10,7 +10,7 @@ import {
   ErrorMessage,
 } from "../components/forms";
 // import ActivityIndicator from "../components/ActivityIndicator";
-// import authApi from "../api/auth";
+import authApi from "../api/auth";
 // import useAuth from "../auth/useAuth";
 // import useApi from "../hooks/useApi";
 // import logger from "../utility/logger";
@@ -24,35 +24,27 @@ const validationSchema = Yup.object().shape({
 });
 
 function RegisterScreen() {
-  //   const registerApi = useApi(authApi.register);
-  //   const loginApi = useApi(authApi.login);
-  //   const auth = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (userInfo) => {
-    console.log("handle register");
-    // const result = await registerApi.request(userInfo);
-    // result
-    //   .then((userCredential) => {
-    //     // Signed in
-    //     const user = userCredential.user;
-    //     // ...
-    //   })
-    //   .catch((error) => {
-    //     const { errorCode, errorMessage } = error;
-    //     setErrorMessage(errorMessage);
-    //   });
-
-    // setErrorMessage("");
-    // // const { data: authToken } = await loginApi.request({
-    // //   email: userInfo.email,
-    // //   password: userInfo.password,
-    // // });
-    // // auth.login(authToken);
+    setLoading(true);
+    const result = await authApi.register(userInfo);
+    result
+      .then((userCredential) => {
+        setLoading(false);
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const { errorCode, errorMessage } = error;
+        setLoading(false);
+        setErrorMessage(errorMessage);
+      });
+    setErrorMessage("");
   };
   return (
     <>
-      {/* <ActivityIndicator visible={registerApi.loading || loginApi.loading} /> */}
+      <ActivityIndicator visible={loading} />
 
       <Screen style={styles.container}>
         <Image

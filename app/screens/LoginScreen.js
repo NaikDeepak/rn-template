@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Image, View } from "react-native";
 
 import * as Yup from "yup";
+import authApi from "../api/auth";
 import Screen from "../components/Screen";
 import {
   ErrorMessage,
@@ -21,16 +22,16 @@ function LoginScreen(props) {
   const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = async ({ email, password }) => {
-    // const result = await authApi.login({ email, password });
-    // result
-    //   .then((userCredential) => {
-    //     const user = userCredential.user;
-    //   })
-    //   .catch((error) => {
-    //     const { errorCode, errorMessage } = error;
-    //     setLoginFailed(true);
-    //   });
-    console.log("handle submit");
+    const result = await authApi.login({ email, password });
+    console.log("result", result);
+    result
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const { errorCode, errorMessage } = error;
+        setLoginFailed(true);
+      });
   };
   return (
     <Screen style={styles.container}>

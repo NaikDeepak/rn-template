@@ -8,7 +8,7 @@ function SubmitButton({ title, style, color, textStyle }) {
 
   return (
     <Button onPress={handleSubmit} round shadowless style={style} color={color}>
-      <Text style={textStyle}>Login</Text>
+      <Text style={textStyle}>{title}</Text>
     </Button>
   );
 }

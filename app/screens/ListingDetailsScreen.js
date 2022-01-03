@@ -12,9 +12,9 @@ import ListItem from "../components/lists/ListItem";
 import { Text } from "galio-framework";
 
 function ListingDetailsScreen({ route }) {
-  //const item = route.params;
+  const item = route.params;
   //TODO:remove below line
-  const { item } = route;
+  //const { item } = route;
   const { url } = item.images[0];
   return (
     <KeyboardAvoidingView
