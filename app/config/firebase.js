@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import settings from "./settings";
 import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 //console.log("settings", settings);
 // Initialize Firebase
