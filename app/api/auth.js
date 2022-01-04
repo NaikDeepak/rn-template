@@ -2,6 +2,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 const login = ({ email, password }) => {
@@ -22,7 +23,18 @@ const register = ({ name, email, password }) => {
   }
 };
 
+const forgotPassword = (email) => {
+  try {
+    const auth = getAuth();
+    console.log("AUTH ", auth);
+    return sendPasswordResetEmail(auth, email);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export default {
   login,
   register,
+  forgotPassword,
 };

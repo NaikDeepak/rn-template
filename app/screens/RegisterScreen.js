@@ -29,18 +29,18 @@ function RegisterScreen() {
 
   const handleRegister = async (userInfo) => {
     setLoading(true);
-    const result = await authApi.register(userInfo);
-    result
+    await authApi
+      .register(userInfo)
       .then((userCredential) => {
+        setErrorMessage("");
         setLoading(false);
-        const user = userCredential.user;
+        const { user } = userCredential;
       })
       .catch((error) => {
         const { errorCode, errorMessage } = error;
-        setLoading(false);
         setErrorMessage(errorMessage);
+        setLoading(false);
       });
-    setErrorMessage("");
   };
   return (
     <>
