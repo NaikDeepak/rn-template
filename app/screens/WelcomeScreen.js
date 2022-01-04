@@ -8,13 +8,14 @@ import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAt
 function WelcomeScreen({ navigation }) {
   console.log("welcome");
   return (
-    <ImageBackground
-      blurRadius={10}
-      style={styles.background}
-      source={require("../assets/background.jpg")}
-    >
+    // <ImageBackground
+    //   blurRadius={10}
+    //   style={styles.background}
+    //   source={require("../assets/background.jpg")}
+    // >
+    <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/birdie.png")} />
+        <Image style={styles.logo} source={require("../assets/hoot.png")} />
         <Text style={styles.tagline}>Communicate with Passion</Text>
       </View>
       <View style={styles.buttonsContainer}>
@@ -39,12 +40,20 @@ function WelcomeScreen({ navigation }) {
           <Text style={styles.buttonText}>Register</Text>
         </Button>
       </View>
-    </ImageBackground>
+    </View> //</ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
+    width: "100%",
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    resizeMode: "contain",
+  },
+  container: {
+    backgroundColor: colors.white,
     width: "100%",
     flex: 1,
     justifyContent: "flex-end",
@@ -80,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "600",
     paddingVertical: 20,
-    color: colors.white,
+    color: colors.tertiary,
   },
 });
 

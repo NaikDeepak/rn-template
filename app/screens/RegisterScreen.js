@@ -47,7 +47,7 @@ function RegisterScreen() {
       <ActivityIndicator visible={loading} />
 
       <Screen style={styles.container}>
-        <Image style={appStyle.logo} source={require("../assets/birdie.png")} />
+        <Image style={appStyle.logo} source={require("../assets/hoot.png")} />
         <ErrorMessage error={errorMessage} visible={!!errorMessage} />
         <View style={styles.formContainer}>
           <Form
