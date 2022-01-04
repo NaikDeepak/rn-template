@@ -32,8 +32,8 @@ function ListingDetailsScreen({ route }) {
 
         <View style={styles.userContainer}>
           <ListItem
-            image={require("../assets/mosh.jpg")}
-            title="Mosh Hamedani"
+            image={require("../assets/person.jpeg")}
+            title="Dylan"
             subTitle="5 Listings"
           />
         </View>

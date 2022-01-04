@@ -9,6 +9,7 @@ function WelcomeScreen({ navigation }) {
   console.log("welcome");
   return (
     <ImageBackground
+      blurRadius={10}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+    resizeMode: "contain",
   },
   buttonsContainer: {
     width: "100%",

@@ -49,7 +49,7 @@ function AccountScreen({ navigation }) {
         <ListItem
           title={"Dylan"}
           subTitle={"dylan@gmail.com"}
-          image={require("../assets/mosh.jpg")}
+          image={require("../assets/person.jpeg")}
         />
       </View>
       <View style={styles.container}>
